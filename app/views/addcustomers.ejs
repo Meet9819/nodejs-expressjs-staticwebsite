@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html>
+  <head> 
+    <%- include('template/allcss.ejs'); -%>   
+  </head>
+  <body> 
+  <!-- content wrapper -->
+  <div class="content-wrap">
+      <div class="content">
+
+    <%- include("template/header.ejs") -%>
+   
+
+
+
+
+       <!-- inner banner -->
+           <section class="bg-white inner-banner pages">
+
+            <div class="container pad-container">
+                <div class="col-md-12">
+                    <h1>Add Students's</h1>
+                    <h3> We'd love to Give Service to you</h3> 
+
+                </div>
+            </div>
+
+        </section>
+        <!-- / inner banner -->       
+        
+           <section>
+
+    <div class="container container-pad-b0">
+
+        <div class="row">
+
+            <h1 class="t-pad10">Admin Panel </h1>
+                <h3 class="b-pad60"> The very finest and biggest thinking minds yet to live on planet earth and every child should be one of them.</h3>
+
+    <div class="col-md-7">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <td>n°</td>
+            <td>Name</td>
+            <td>Address</td>
+            <td>Phone</td>
+             <td>Action</td>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <% if (data) { %>
+            <% for(var i = 0; i < data.length; i++) { %>
+              <tr>
+                <td><%= (i + 1) %></td>
+                <td><%= data[i].name %></td>
+                <td><%= data[i].address %></td>
+                <td><%= data[i].phone %></td>
+               <td>
+                  <a href="/addcustomers/update/<%= data[i].id %>" class="btn btn-success">Edit</a>
+                  <a href="/addcustomers/delete/<%= data[i].id %>" class="btn btn-danger">Delete</a>
+                </td> 
+              </tr>
+            <% } %>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+
+
+
+    <div class="col-md-5">
+      <div class="card-body">
+
+        <form action="/addcustomers/add" method="POST">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Name" class="form-control" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" name="address" placeholder="Address" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="phone" placeholder="Phone" class="form-control">
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            save customer
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+
+
+</div>
+</div>
+
+
+<%- include("template/footer.ejs") -%>
+    <%- include("template/alljs.ejs") -%>
+</body>
+</html>

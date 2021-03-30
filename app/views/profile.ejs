@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <%- include('template/allcss.ejs'); -%>   
+  </head>
+  <body> 
+
+
+  <!-- content wrapper -->
+  <div class="content-wrap">
+
+      <div class="content">
+
+    <%- include("template/header.ejs") -%>
+   
+    
+
+       <!-- inner banner -->
+           <section class="bg-white inner-banner pages">
+
+            <div class="container pad-container">
+                <div class="col-md-12">
+                    <h1>Hello, <%= name %></h1>
+                    <h3>Profile Page - We'd love to Give Service to you</h3> 
+
+                    <a href="/logout" >Logout</a>
+                </div>
+            </div>
+
+        </section>
+        <!-- / inner banner --> 
+
+
+             <!-- intro section -->
+          <section class="bg-white">
+            <div class="container pad-container">
+
+              
+
+                <div class="clearfix"></div> 
+
+                <div class="row t-pad40">
+                </div>
+
+              </div>
+            </section>
+
+<%- include("template/footer.ejs") -%>
+    <%- include("template/alljs.ejs") -%>
+</body>
+</html>

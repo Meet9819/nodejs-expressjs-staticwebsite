@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+  <head> 
+    <%- include('template/allcss.ejs'); -%>   
+  </head>
+  <body> 
+  <!-- content wrapper -->
+  <div class="content-wrap">
+      <div class="content">
+
+    <%- include("template/header.ejs") -%>
+   
+
+
+
+       <!-- inner banner -->
+           <section class="bg-white inner-banner pages">
+
+            <div class="container pad-container">
+                <div class="col-md-12">
+                    <h1>All Students's</h1>
+                    <h3> We'd love to Give Service to you</h3> 
+
+                </div>
+            </div>
+
+        </section>
+        <!-- / inner banner -->       
+        
+           <section>
+
+    <div class="container container-pad-b0">
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <h1 class="t-pad10">Ridhdhi Sidhdhi tuition</h1>
+                <h3 class="b-pad60"> The very finest and biggest thinking minds yet to live on planet earth and every child should be one of them.</h3>
+
+                           
+      <table class="table table-bordered table-hover">
+       
+       <thead>
+          <tr>
+            <th>n°</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <% if (data) { %>
+            <% for(var i = 0; i < data.length; i++) { %>
+              <tr>
+                <td><%= (i + 1) %></td>
+                <td><%= data[i].name %></td>
+                <td><%= data[i].address %></td>
+                <td><%= data[i].phone %></td>
+            
+              </tr>
+            <% } %>
+          <% } %>
+        </tbody>
+      </table>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+</div>
+</div>
+
+
+<%- include("template/footer.ejs") -%>
+    <%- include("template/alljs.ejs") -%>
+</body>
+</html>
